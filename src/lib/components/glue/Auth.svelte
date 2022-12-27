@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { appName } from '$lib/config';
+	import { APP_NAME } from '$lib/config';
 	import IconAdd from '$lib/icons/IconAdd.svelte';
 	import IconLogout from '$lib/icons/IconLogout.svelte';
 	import { currentUser, pb } from '$lib/pocketbase';
 	import type { ChangeEventHandler } from 'svelte/elements';
-	import Textarea from './glue/Textarea.svelte';
+	import Textarea from './Textarea.svelte';
 
 	let state: 'signin' | 'register' = 'register';
 
@@ -66,7 +66,15 @@
 
 {#if $currentUser}
 	<div class="dropdown-end dropdown">
-		<label tabindex="0" class="btn-ghost btn">{$currentUser.email?.split('@')[0]}</label>
+		<label tabindex="0" class="btn-ghost btn-square btn">
+			<div class="placeholder avatar">
+				<div
+					class="w-8 rounded-full bg-neutral-focus text-neutral-content ring-2 ring ring-primary ring-offset-2 ring-offset-base-100"
+				>
+					<span class="text-sm">{$currentUser?.name?.charAt(0)}</span>
+				</div>
+			</div>
+		</label>
 		<ul
 			tabindex="0"
 			class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-200 p-2 shadow"
@@ -116,7 +124,7 @@
 				<div class="flex flex-col gap-3">
 					<h3 class="p-0 text-xl font-medium text-gray-900 dark:text-white">
 						{state === 'signin' ? 'Sign in to' : 'Create an account on'}
-						{appName}
+						{APP_NAME}
 					</h3>
 					{#if state === 'register'}
 						<div class="form-control">
