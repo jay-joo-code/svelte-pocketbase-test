@@ -78,11 +78,6 @@
 					</div>
 				{/each}
 			</div>
-
-			<!-- posts -->
-			{#each posts as post (post.id)}
-				<PostItem {post} />
-			{/each}
 		</div>
 	</Main>
 
