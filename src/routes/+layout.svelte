@@ -3,8 +3,6 @@
 	import MobileDrawerContent from '$lib/components/glue/MobileDrawerContent.svelte';
 	import { APP_NAME } from '$lib/config';
 	import '../app.css';
-
-	const APP_MAX_WIDTH = '4xl';
 </script>
 
 <div class="w-screen">
@@ -12,7 +10,7 @@
 		<!-- mobile nav: invisible drawer toggle -->
 		<input id="drawer-mobile-nav" type="checkbox" class="drawer-toggle" />
 		<div class="drawer-content flex flex-col items-center">
-			<div class={`w-full max-w-${APP_MAX_WIDTH}`}>
+			<div class={`w-full max-w-4xl`}>
 				<div class="navbar bg-base-100">
 					<!-- mobile nav: hamburger -->
 					<div class="flex-none md:hidden">
@@ -41,7 +39,7 @@
 					</div>
 				</div>
 			</div>
-			<div class={`w-full max-w-${APP_MAX_WIDTH}`}>
+			<div class={`w-full max-w-4xl`}>
 				<slot />
 			</div>
 		</div>
