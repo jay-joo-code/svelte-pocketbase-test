@@ -16,6 +16,7 @@
 		on:blur
 		on:change
 		on:click
+		on:input
 		on:contextmenu
 		on:focus
 		on:keydown
@@ -27,6 +28,6 @@
 		on:paste
 		{...$$restProps}
 		{name}
-		class={`textarea-bordered textarea h-24 w-full ${$$props.class}`}
+		class={`textarea h-24 w-full ${$$props.class}`}
 	/>
 </div>

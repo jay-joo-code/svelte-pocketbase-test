@@ -1,1 +1,1 @@
-export const appName = 'Ezragram';
+export const appName = 'Interpretations';

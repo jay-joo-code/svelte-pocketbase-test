@@ -15,6 +15,7 @@
 
 	let email: string;
 	let password: string;
+	let username: string;
 
 	async function login() {
 		await pb.collection('users').authWithPassword(email, password);
@@ -25,7 +26,8 @@
 			const data = {
 				email,
 				password,
-				passwordConfirm: password
+				passwordConfirm: password,
+				name: username
 			};
 			await pb.collection('users').create(data);
 			await login();
@@ -116,6 +118,18 @@
 						{state === 'signin' ? 'Sign in to' : 'Create an account on'}
 						{appName}
 					</h3>
+					{#if state === 'register'}
+						<div class="form-control">
+							<label class="label" for="username">Name</label>
+							<input
+								class="input-bordered input w-full max-w-xs"
+								name="username"
+								placeholder="John Doe"
+								required
+								bind:value={username}
+							/>
+						</div>
+					{/if}
 					<div class="form-control">
 						<label class="label" for="email">Email</label>
 						<input

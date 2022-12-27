@@ -4,7 +4,7 @@
 	import '../app.css';
 </script>
 
-<div class="flex h-screen w-screen justify-center">
+<!-- <div class="flex h-screen w-screen justify-center">
 	<div class="w-full max-w-4xl">
 		<div class="navbar bg-base-100">
 			<div class="flex-none">
@@ -34,4 +34,6 @@
 		</div>
 		<slot />
 	</div>
-</div>
+</div> -->
+
+<slot />
