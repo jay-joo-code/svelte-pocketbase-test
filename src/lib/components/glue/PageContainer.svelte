@@ -16,7 +16,7 @@
 	</div>
 {:else if layout === 'aside-main'}
 	<!-- aside main layout: should only have 2 top level children -->
-	<div class="flex flex-col space-y-4 p-4 pl-6 md:flex-row md:space-y-0 md:space-x-4">
+	<div class="flex flex-col space-y-4 p-4 md:flex-row md:space-y-0 md:space-x-4 md:pl-6">
 		<slot />
 	</div>
 {/if}
