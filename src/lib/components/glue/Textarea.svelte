@@ -28,6 +28,6 @@
 		on:paste
 		{...$$restProps}
 		{name}
-		class={`textarea h-24 w-full ${$$props.class}`}
+		class={`${$$props.class} textarea-bordered textarea h-24 w-full text-base`}
 	/>
 </div>
