@@ -1,7 +1,7 @@
 <script>
 	import Auth from '$lib/components/glue/Auth.svelte';
 	import MobileDrawerContent from '$lib/components/glue/MobileDrawerContent.svelte';
-	import { APP_NAME } from '$lib/config';
+	import { APP_NAME, PUBLIC_NAVS } from '$lib/config';
 	import '../app.css';
 </script>
 
@@ -29,10 +29,21 @@
 							>
 						</label>
 					</div>
-					<div class="flex-1">
+					<div>
 						<button>
-							<a class="btn-ghost btn text-xl normal-case">{APP_NAME}</a>
+							<a href="/" class="btn-ghost btn text-xl normal-case">{APP_NAME}</a>
 						</button>
+					</div>
+					<div class="flex flex-1 justify-center">
+						<div class="hidden md:block">
+							<div class="menu menu-horizontal p-2">
+								{#if PUBLIC_NAVS?.length > 0}
+									{#each PUBLIC_NAVS as nav}
+										<li class="font-bold"><a href={nav.path}>{nav.label}</a></li>
+									{/each}
+								{/if}
+							</div>
+						</div>
 					</div>
 					<div class="flex-none">
 						<Auth />

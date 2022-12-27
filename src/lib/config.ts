@@ -1,11 +1,7 @@
+interface INav {
+	path: string;
+	label: string;
+}
+
 export const APP_NAME = 'Interpretations';
-export const PUBLIC_NAVS = [
-	{
-		label: 'blog',
-		path: '/blog'
-	},
-	{
-		label: 'blog',
-		path: '/blog'
-	}
-];
+export const PUBLIC_NAVS: INav[] = [];
